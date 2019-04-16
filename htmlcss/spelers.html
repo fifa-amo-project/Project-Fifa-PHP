@@ -56,40 +56,32 @@
   </header>
 
   <main>
-    <div class="banner">
-      <div class="container">
+    <div class="container">
+      <div class="spelers">
+        <h3>Dit zijn de Spelers:</h3>
+        <ul>
+          <li>Speler, Team Speler</li>
+        </ul>
 
-        <img src="img/banner.jpg" alt="banner.png">
-        <div class="centered">
-          <h2>Welkom op F<span>I</span>F<span>A</span></h2>
-        </div><!-- end of centered -->
-        <div class="bottom">
-          <span>Voetbal, niet meer en niet minder.</span>
-        </div><!-- end of bottom -->
-        
-      </div> <!-- end of container -->
-      
-    </div> <!-- end of "banner" -->
+        <div class="player-form">
+          <h4>Voeg een Speler toe:</h4>
+          <form action="action_page.php">
 
-    <div class="players-and-teams">
-      <div class="container">
-        
-        <div class="main-players">
-          <h3>Uitgelichte Spelers</h3>
-          <p>Speler Naam</p>
-          <p>Speler Naam</p>
-          <p>Speler Naam</p>
-        </div>
+          
+          <label for="player-name"><b>Naam</b></label>
+          <input type="text" placeholder="Speler Naam" name="player-name" required>
 
-        <div class="main-teams">
-          <h3>Uitgelichte Teams</h3>
-          <p>Team Naam</p>
-          <p>Team Naam</p>
-          <p>Team Naam</p>
-        </div>
+          <label for="team"><b>Team</b></label>
+          <input type="text" placeholder="Team Speler" name="player-team" required>
 
-      </div><!-- end of container -->
-    </div><!-- end of players and teams -->
+          <button type="submit">Speler Toevoegen</button>
+          
+          
+          </form> <!-- end of form action -->
+
+        </div><!-- end of player-form -->
+      </div><!-- end of spelers -->
+    </div><!-- end of container -->
   </main>
 
   <footer>

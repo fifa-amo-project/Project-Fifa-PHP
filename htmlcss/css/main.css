@@ -118,6 +118,8 @@ a {
 
 main {
     background-color: #28B533;
+    height: 100%;
+    min-height: 100%;
 }
 
 p {
@@ -284,14 +286,16 @@ h2 span {
 
     }
 
-    .players {
+    .main-players {
         
         flex: 1;
     }
 
-    .teams {
+    .main-teams {
         flex: 1;
     }
+
+
 
 
 /* ==========================================================================
@@ -315,6 +319,277 @@ h2 span {
         justify-content: space-between;
         align-items: center;
     }
+
+    /* ==========================================================================
+    Other Pages
+    ========================================================================= */
+    /* ==========================================================================
+    Login Page
+    ========================================================================= */
+
+    .login {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: 500px;
+    }
+
+    .loginform {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .loginform label {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .loginform input {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .loginform button {
+        width: 30%;
+        text-align: center;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .loginform span {
+        color: white;
+    }
+
+    .loginform span a {
+        color: white;
+    }
+
+    .login h3 {
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+   Spelers
+   ========================================================================== */
+    .spelers {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: 500px;
+    }
+
+    .spelers h3, .spelers h4 {
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    .spelers ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .spelers li {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .player-form form{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .player-form label {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .player-form input {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .player-form button {
+        width: 30%;
+        text-align: center;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .player-form span {
+        color: white;
+    }
+
+    .player-form span a {
+        color: white;
+    }
+
+    .spelers h4 {
+        margin-bottom: 10px;
+    }
+
+    .spelers ul {
+        margin-bottom: 10px;
+    }
+
+   /* ==========================================================================
+   Teams
+   ========================================================================== */
+
+
+    .teams {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: 500px;
+    }
+
+    .teams h3, .teams h4 {
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    .teams ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .teams li {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .team-form form{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .team-form label {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .team-form input {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .team-form button {
+        width: 30%;
+        text-align: center;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .team-form span {
+        color: white;
+    }
+
+    .team-form span a {
+        color: white;
+    }
+
+    .teams h4 {
+        margin-bottom: 10px;
+    }
+
+    .teams ul {
+        margin-bottom: 10px;
+    }
+
+
+   /* ==========================================================================
+   Poules
+   ========================================================================== */
+
+    .poules {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: 500px;
+    }
+
+    .poules h3, .poules h4 {
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    .poules ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .poules li {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .poule-form form{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .poule-form label {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .poule-form input {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .poule-form button {
+        width: 30%;
+        text-align: center;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .poule-form span {
+        color: white;
+    }
+
+    .poule-form span a {
+        color: white;
+    }
+
+    .poules h4 {
+        margin-bottom: 10px;
+    }
+
+    .poules ul {
+        margin-bottom: 10px;
+    }
+
 
 /* ==========================================================================
    Helper classes

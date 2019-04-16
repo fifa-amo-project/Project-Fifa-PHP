@@ -22,19 +22,7 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-
-  <!-- musts voor site:
-    spelers pagina: voeg een speler toe form
-    teams pagina: maak een nieuw team form, alleen admin kan verwijderen. alle teams moeten wel zichtbaar zijn.
-    een gebruiker moet ook zijn eigen team aan kunnen passen.
-    poule pagina
-    main page met banner
-    inlog pagina
-    register pagina
-    alles met een "Touch of football"
--->
-
-  <header>
+   <header>
     <div class="container">
       <div class="header">
         <div class="title">
@@ -56,40 +44,30 @@
   </header>
 
   <main>
-    <div class="banner">
-      <div class="container">
+    <div class="container">
+      <div class="login">
+        <h3>Inloggen</h3>
+      <form action="action_page.php">
 
-        <img src="img/banner.jpg" alt="banner.png">
-        <div class="centered">
-          <h2>Welkom op F<span>I</span>F<span>A</span></h2>
-        </div><!-- end of centered -->
-        <div class="bottom">
-          <span>Voetbal, niet meer en niet minder.</span>
-        </div><!-- end of bottom -->
-        
-      </div> <!-- end of container -->
+      <div class="loginform">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Email Adres" name="email" required>
+
+      <label for="password"><b>Wachtwoord</b></label>
+      <input type="password" placeholder="Wachtwoord" name="psw" required>
+
+      <button type="submit">Inloggen</button>
       
-    </div> <!-- end of "banner" -->
+      </div><!-- end of loginform -->
 
-    <div class="players-and-teams">
-      <div class="container">
-        
-        <div class="main-players">
-          <h3>Uitgelichte Spelers</h3>
-          <p>Speler Naam</p>
-          <p>Speler Naam</p>
-          <p>Speler Naam</p>
-        </div>
+      <div class="loginform">
 
-        <div class="main-teams">
-          <h3>Uitgelichte Teams</h3>
-          <p>Team Naam</p>
-          <p>Team Naam</p>
-          <p>Team Naam</p>
-        </div>
+      <span class="password">Forgot password? <a href="">Click here.</a></span>
+      </div> <!-- end of loginform -->
+      </form> <!-- end of form action -->
 
-      </div><!-- end of container -->
-    </div><!-- end of players and teams -->
+      </div><!-- end of login -->
+    </div><!-- end of container -->
   </main>
 
   <footer>
@@ -123,8 +101,6 @@
 
   </footer>
 
-  
-  
 </body>
 
 </html>
