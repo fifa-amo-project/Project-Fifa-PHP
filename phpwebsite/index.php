@@ -42,7 +42,7 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC);
           <h3>Uitgelichte Teams</h3>
           <?php 
           foreach ($teams as $team) {
-            echo"<p> {$team['teamname']} </p>";
+            echo"<a href='team.php?id={$team['id']}'> {$team['teamname']} </a>";
           }
           ?>
         </div>
