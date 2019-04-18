@@ -25,7 +25,7 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles
             foreach ($teams as $team){
                 $teamname = htmlentities($team['teamname']);
                 $id = htmlentities($team['id']);
-                echo " <a href='team.php'> {$team['teamname']} </a>" ;
+                echo " <a href='team.php?id=$id'> {$team['teamname']} </a>" ;
 
             }
             ?>

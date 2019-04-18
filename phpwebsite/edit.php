@@ -9,8 +9,9 @@ $prepare->execute([
 
 $team = $prepare->fetch(PDO::FETCH_ASSOC);
 ?>
+<main id="edit">
 <div class="team-form">
-                <h4>Voeg een Team toe:</h4>
+                <h3>pas een team aan:</h3>
 
                 <form action="fifaController.php?id=<?=$id?>" method="post">
                 <input type="hidden" name="type" value="edit">
@@ -35,13 +36,16 @@ $team = $prepare->fetch(PDO::FETCH_ASSOC);
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" id="edit-button" value="Team aanpassen">
+                        <input type="submit" id="edit_button" value="Team aanpassen">
                     </div>
                   
 
 
-                </form> <!-- end of form action -->
+    </form> <!-- end of form action -->
 
+
+</main>
+    
 <?php
 require 'footer.php';
 ?>

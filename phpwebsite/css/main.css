@@ -118,8 +118,16 @@ a {
 
 main {
     background-color: #28B533;
+    background-size: auto;
     height: 100%;
     min-height: 100%;
+    padding-top: 20px;
+    padding-bottom: 200px;
+}
+
+main#edit{
+    padding-top: 80px;
+    padding-bottom: 538px;
 }
 
 p {
@@ -350,25 +358,33 @@ h2 span {
     }
 
     .form-group input {
-        width: 50%;
+        width: 500px;
         margin: auto;
         text-align: center;
     }
 
     .form-group input[type=submit]{
-        width: 10%;
+        width: 100px;
         align-items: center;
         margin: 0 auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    .form-group input#create-button{
-        width: 15%;
+    .form-group input#create_button{
+        width: 150px;
         align-items: center;
         margin: 0 auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    .form-group input#edit_button{
+        width: 150px;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
 
     .form-group span {
         color: white;
@@ -379,7 +395,7 @@ h2 span {
     }
 
     select#playeramount{
-      width: 5%;
+      width: 50px;
       margin: 0 auto;
     }
 
@@ -496,6 +512,13 @@ h2 span {
         padding: 5px;
     }
 
+    .teams p{
+        text-align: center;
+    }
+
+    .team-form h3{
+        text-align: center;
+    }
     .team-form form{
         display: flex;
         flex-direction: column;
