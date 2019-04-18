@@ -11,7 +11,7 @@ $sql = "SELECT * FROM teams"; //gewoon een opslag van een string die je later ga
 $query = $db->query($sql); //verzoek naar de database, voer sql van hierboven uit
 $teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles binnenhalen
 
- if($_SESSION = false){
+ if(!isset($_SESSION['id'])){
      header('Location: redirect.php');
      exit;
  }

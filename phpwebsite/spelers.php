@@ -5,8 +5,12 @@
  * Date: 16-4-2019
  * Time: 10:17
  */
-require 'config.php';
+
 require 'header.php';
+if(!isset($_SESSION['id'])){
+    header('Location: redirect.php');
+    exit;
+}
 ?>
 
 <main>

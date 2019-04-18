@@ -5,9 +5,13 @@
  * Date: 15-4-2019
  * Time: 11:22
  */
-
-
 require 'header.php';
+$sql = "SELECT * FROM teams";
+$query = $db->query($sql);
+$teams = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?>
 
   <main>
@@ -31,16 +35,16 @@ require 'header.php';
 
         <div class="main-players">
           <h3>Uitgelichte Spelers</h3>
-          <p>Speler Naam</p>
-          <p>Speler Naam</p>
-          <p>Speler Naam</p>
+        
         </div>
 
         <div class="main-teams">
           <h3>Uitgelichte Teams</h3>
-          <p>Team Naam</p>
-          <p>Team Naam</p>
-          <p>Team Naam</p>
+          <?php 
+          foreach ($teams as $team) {
+            echo"<p> {$team['teamname']} </p>";
+          }
+          ?>
         </div>
 
       </div><!-- end of container -->
