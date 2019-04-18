@@ -5,7 +5,7 @@
  * Date: 15-4-2019
  * Time: 11:23
  */
-
+require 'config.php';
 ?>
 
 <!doctype html>
@@ -45,6 +45,7 @@ poule pagina
 -->
 
 <header>
+    <?php var_dump($_SESSION);?>
     <div class="container">
         <div class="header">
             <div class="title">
@@ -55,11 +56,20 @@ poule pagina
                 <a href="spelers.php">Spelers</a>
                 <a href="teams.php">Teams</a>
             </nav>
-
-            <div class="register-or-login">
+            <?php
+            if(isset($_SESSION['id'])){
+                echo 
+                ' <a href="logout.php">Logout</a>';
+            }else{
+                echo 
+               '<div class="register-or-login">
                 <a href="login.php">Inloggen</a>
                 <a href="register.php">Registreren</a>
-            </div>
+            </div>';
+                
+            }
+            ?>
+           
         </div> <!-- end of header -->
     </div> <!-- end of container -->
 </header>

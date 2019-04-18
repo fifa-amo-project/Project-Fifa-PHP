@@ -2,45 +2,49 @@
 require 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' ) {
+    die('no post?');
     header('location: index.php');
     exit;
 }
 
+
 if ( $_POST['type'] === 'login' ) {
 
-    $username = !empty($_POST['email']) ? trim($_POST['email']) : null;
-    $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
+  $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
+  $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
 
-    $sql = "SELECT id, email, password, is_Admin FROM users  WHERE email = :email";
-    $stmt = $db->prepare($sql);
+  $sql = "SELECT * FROM users  WHERE email = :email";
+  $stmt = $db->prepare($sql);
 
-    $stmt->bindValue(':email', $email);
+  $stmt->bindValue(':email', $email);
 
-    $stmt->execute();
+  $stmt->execute();
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if($user === false){
+  $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-        die('Verkeerde email / wachtwoord combinatie!');
+
+  if($user === false){
+
+
+
+  } else{
+
+    $validPassword = password_verify($passwordAttempt, $user['password']);
+
+    if($validPassword){
+
+      $_SESSION['id'] = $user['id'];
+      $_SESSION['logged_in'] = time();
+
+      header('Location: index.php');
+      exit;
+
     } else{
 
-        $validPassword = password_verify($passwordAttempt, $user['password']);
-
-        if($validPassword){
-
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['logged_in'] = time();
-
-            header('Location: index.php');
-            exit;
-
-        } else{
-
-            die('Verkeerde Email / wachtwoord combinatie!');
-        }
+      die(' gebruikersnaam en wachtwoord komen niet overeen!');
     }
+  }
 }
 
 if ($_POST['type'] === 'register') {

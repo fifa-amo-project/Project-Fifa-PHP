@@ -5,11 +5,16 @@
  * Date: 16-4-2019
  * Time: 10:17
  */
-require 'config.php';
+
 require 'header.php';
 $sql = "SELECT * FROM teams"; //gewoon een opslag van een string die je later gaat gebruiken
 $query = $db->query($sql); //verzoek naar de database, voer sql van hierboven uit
 $teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles binnenhalen
+
+ if($_SESSION = false){
+     header('Location: redirect.php');
+     exit;
+ }
 ?>
 
 <main>

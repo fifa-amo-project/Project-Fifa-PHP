@@ -5,7 +5,6 @@
  * Date: 16-4-2019
  * Time: 10:17
  */
-require 'config.php';
 require 'header.php';
 ?>
 
@@ -13,15 +12,15 @@ require 'header.php';
     <div class="container">
         <div class="login">
             <h3>Inloggen</h3>
-            <form action="loginController.php">
+            <form action="loginController.php" method="post">
 
                 <div class="loginform">
                     <input type="hidden" name="type" value="login">
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Email Adres" name="email" required>
+                    <label for="email" ><b>Email</b></label>
+                    <input type="text" placeholder="Email Adres" name="email" id="email" required>
 
                     <label for="password"><b>Wachtwoord</b></label>
-                    <input type="password" placeholder="Wachtwoord" name="psw" required>
+                    <input type="password" placeholder="Wachtwoord" name="password" id="password" required>
 
                     <button type="submit">Inloggen</button>
 
