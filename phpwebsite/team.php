@@ -25,6 +25,11 @@ $teamname = htmlentities($team['teamname']);
                         <input type='hidden' name='type' value='delete'>
                             <input type='submit' value='delete'>
                         </div>
+
+                        <div class='form-group'>
+                        <input type='hidden' name='type' value='edit'>
+                            <a href='edit.php'>edit</a>
+                        </div>
                     
                     ";
                     }

@@ -59,7 +59,7 @@ poule pagina
             <?php
             if(isset($_SESSION['id'])){
                 echo 
-                ' <a href="logout.php">Logout</a>';
+                ' <a href="logout.php">Uitloggen</a>';
             }else{
                 echo 
                '<div class="register-or-login">

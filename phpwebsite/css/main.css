@@ -362,6 +362,13 @@ h2 span {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    .form-group input#create-button{
+        width: 15%;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
     .form-group span {
         color: white;
@@ -481,11 +488,12 @@ h2 span {
         padding: 0;
     }
 
-    .teams li {
-        list-style: none;
+    .teams a {
+       display: flex;
+       flex-direction: column;
         text-align: center;
         margin: 0;
-        padding: 0;
+        padding: 5px;
     }
 
     .team-form form{

@@ -56,7 +56,7 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles
                     </div>
 
                     <div class="form-group">
-                    <input type="submit" id="crate_button" value="Team toevoegen">
+                    <input type="submit" id="create_button" value="Team toevoegen">
                     </div>
                   
 
