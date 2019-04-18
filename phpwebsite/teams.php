@@ -25,19 +25,40 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles
             foreach ($teams as $team){
                 $teamname = htmlentities($team['teamname']);
                 $id = htmlentities($team['id']);
-                echo "<li> {$team['teamname']}</li>";
+                echo " <a href='team.php'> {$team['teamname']} </a>" ;
 
             }
             ?>
+            
             <div class="team-form">
                 <h4>Voeg een Team toe:</h4>
+
                 <form action="fifaController.php" method="post">
                 <input type="hidden" name="type" value="create">
+                    <div class="form-group">
+                        <label for="teamname"><b>Team</b></label>
+                        <input type="text" placeholder="Team Naam" name="teamname" required>
+                        
+                        <label for="p-amount">selecteer een aantal spelers</label>
+                        <select name="p-amount" id="playeramount">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
 
-                    <label for="teamname"><b>Team</b></label>
-                    <input type="text" placeholder="Team Naam" name="teamname" required>
-
-                    <button type="submit" id="create_button" value="Create new User">Team Toevoegen</button>
+                    <div class="form-group">
+                    <input type="submit" id="crate_button" value="Team toevoegen">
+                    </div>
+                  
 
 
                 </form> <!-- end of form action -->

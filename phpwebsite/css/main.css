@@ -298,6 +298,8 @@ h2 span {
     }
 
 
+     
+
 
 
 /* ==========================================================================
@@ -367,6 +369,11 @@ h2 span {
 
     .form-group span a {
         color: white;
+    }
+
+    select#playeramount{
+      width: 5%;
+      margin: 0 auto;
     }
 
     .login h3 {

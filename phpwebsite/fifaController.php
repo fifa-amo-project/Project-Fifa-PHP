@@ -17,14 +17,17 @@ require 'config.php';
 if ($_POST['type'] == 'create') {
     $teamname = $_POST['teamname'];
     $created_by = $_SESSION['id'];
+    $players= $_POST['p-name'];
 
-    $sql = "INSERT INTO teams (teamname, created_by ) 
-values (:teamname, :created_by)";
+    $sql = "INSERT INTO teams (teamname, players, created_by ) 
+values (:teamname,:players , :created_by)";
 
     $prepare = $db->prepare($sql); //protect against sql injection
     $prepare->execute([
         ':teamname' => $teamname,
-        ':created_by' => $created_by 
+        ':players' => $players,
+        ':created_by' => $created_by
+        
     ]);
     header('Location: index.php');
     exit;
