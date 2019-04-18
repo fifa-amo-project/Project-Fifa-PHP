@@ -18,19 +18,20 @@ require 'header.php';
             <h3>Registreren</h3>
 
             <form action="loginController.php" method="post">
-
-                <div class="loginform">
-                    <input type="hidden" name="type" value="register">
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Email Adres" name="email" required>
-
-                    <label for="password"><b>Wachtwoord</b></label>
-                    <input type="password" placeholder="Wachtwoord" name="password" required>
-
-                    <button type="submit">Registreren</button>
-
-                </div><!-- end of loginform -->
-
+                <input type="hidden" name="type" value="register">
+                    <div class="form-group">
+                         <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Email Adres" name="email" required>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="password"><b>Wachtwoord</b></label>
+                        <input type="password" placeholder="Wachtwoord" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Registreren">
+                    </div>
+                    
             </form> <!-- end of form action -->
 
         </div><!-- end of login -->

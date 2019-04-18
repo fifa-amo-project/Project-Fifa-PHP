@@ -335,37 +335,37 @@ h2 span {
         height: 500px;
     }
 
-    .loginform {
+    .form-group {
         display: flex;
         flex-direction: column;
         text-align: center;
     }
 
-    .loginform label {
+    .form-group label {
         margin-bottom: 10px;
         margin-top: 10px;
         color: white;
     }
 
-    .loginform input {
+    .form-group input {
         width: 50%;
         margin: auto;
         text-align: center;
     }
 
-    .loginform button {
-        width: 30%;
-        text-align: center;
-        margin: auto;
+    .form-group input[type=submit]{
+        width: 10%;
+        align-items: center;
+        margin: 0 auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
-    .loginform span {
+    .form-group span {
         color: white;
     }
 
-    .loginform span a {
+    .form-group span a {
         color: white;
     }
 
@@ -455,6 +455,11 @@ h2 span {
         padding-top: 20px;
         padding-bottom: 20px;
         height: 500px;
+    }
+
+    .teams img{
+        display: block;
+        margin: 0 auto; 
     }
 
     .teams h3, .teams h4 {
@@ -591,6 +596,11 @@ h2 span {
     .poules ul {
         margin-bottom: 10px;
     }
+
+
+     /* ==========================================================================
+   Team
+   ========================================================================== */
 
 
 /* ==========================================================================

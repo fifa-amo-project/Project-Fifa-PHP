@@ -19,7 +19,7 @@ if ( $_POST['type'] === 'login' ) {
   $stmt->bindValue(':email', $email);
 
   $stmt->execute();
-
+    
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
@@ -33,8 +33,9 @@ if ( $_POST['type'] === 'login' ) {
     $validPassword = password_verify($passwordAttempt, $user['password']);
 
     if($validPassword){
-
+      
       $_SESSION['id'] = $user['id'];
+      $_SESSION['is_Admin'] = $user['is_Admin'];
       $_SESSION['logged_in'] = time();
 
       header('Location: index.php');

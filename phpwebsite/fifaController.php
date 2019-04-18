@@ -31,3 +31,15 @@ values (:teamname, :created_by)";
 }
 
 
+if($_POST['type'] == 'delete'){
+    $id = $_GET['id'];
+    $sql = "DELETE FROM teams WHERE id = :id";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':id' => $id
+    ]);
+
+    $msg = 'Team deleted';
+    header( "Location: index.php?msg=$msg");
+    exit;
+}

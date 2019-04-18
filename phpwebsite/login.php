@@ -14,19 +14,25 @@ require 'header.php';
             <h3>Inloggen</h3>
             <form action="loginController.php" method="post">
 
-                <div class="loginform">
+               
                     <input type="hidden" name="type" value="login">
-                    <label for="email" ><b>Email</b></label>
-                    <input type="text" placeholder="Email Adres" name="email" id="email" required>
+                    <div class="form-group">
+                        <label for="email" ><b>Email</b></label>
+                        <input type="text" placeholder="Email Adres" name="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password"><b>Wachtwoord</b></label>
+                        <input type="password" placeholder="Wachtwoord" name="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="inloggen">
+                    </div>
+                    
 
-                    <label for="password"><b>Wachtwoord</b></label>
-                    <input type="password" placeholder="Wachtwoord" name="password" id="password" required>
+                
 
-                    <button type="submit">Inloggen</button>
-
-                </div><!-- end of loginform -->
-
-                <div class="loginform">
+                <div class="form-group">
 
                     <span class="password">Forgot password? <a href="">Click here.</a></span>
                 </div> <!-- end of loginform -->
