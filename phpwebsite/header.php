@@ -54,7 +54,6 @@ poule pagina
             <nav>
                 <a href="spelers.php">Spelers</a>
                 <a href="teams.php">Teams</a>
-                <a href="poules.php">Poules</a>
             </nav>
 
             <div class="register-or-login">
