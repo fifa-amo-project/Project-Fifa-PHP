@@ -275,8 +275,10 @@ h2 span {
         text-align: center;
         color: white;
     }
-    .players-and-teams p{
+    .players-and-teams a{
         text-align: center;
+        display: flex;
+        flex-direction: column;
         color: white;
 
     }
