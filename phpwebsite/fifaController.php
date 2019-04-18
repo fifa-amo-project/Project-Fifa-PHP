@@ -17,7 +17,7 @@ require 'config.php';
 if ($_POST['type'] == 'create') {
     $teamname = $_POST['teamname'];
     $created_by = $_SESSION['id'];
-    $players= $_POST['p-name'];
+    $players= $_POST['p-amount'];
 
     $sql = "INSERT INTO teams (teamname, players, created_by ) 
 values (:teamname,:players , :created_by)";
