@@ -1,5 +1,6 @@
 <?php
-/**
+/*
+*
  * Created by PhpStorm.
  * User: Aaron
  * Date: 1-4-2019
@@ -61,7 +62,7 @@ if($_POST['type'] == 'edit'){
         ':teamname' => $_POST['teamname'],
         ':players' => $_POST['p-amount']
     ]);
-    header("Location: team.php");
+    header("Location: team.php?id=$id");
     exit;
 
 }

@@ -34,7 +34,7 @@ require 'header.php';
 
                 <div class="form-group">
 
-                    <span class="password">Forgot password? <a href="">Click here.</a></span>
+                    <span class="password">Wachtwoord vergeten? <a href="">Klik hier.</a></span>
                 </div> <!-- end of loginform -->
             </form> <!-- end of form action -->
 
