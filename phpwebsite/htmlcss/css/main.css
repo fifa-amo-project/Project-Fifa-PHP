@@ -118,19 +118,8 @@ a {
 
 main {
     background-color: #28B533;
-    background-size: auto;
-    height: auto;
+    height: 100%;
     min-height: 100%;
-    padding-top: 50px;
-    padding-bottom: 200px;
-}
-.redirect{
-    height: 500px;
-}
-
-main#edit{
-    padding-top: 80px;
-    padding-bottom: 538px;
 }
 
 p {
@@ -286,10 +275,8 @@ h2 span {
         text-align: center;
         color: white;
     }
-    .players-and-teams a{
+    .players-and-teams p{
         text-align: center;
-        display: flex;
-        flex-direction: column;
         color: white;
 
     }
@@ -308,8 +295,6 @@ h2 span {
         flex: 1;
     }
 
-
-     
 
 
 
@@ -348,58 +333,38 @@ h2 span {
         height: 500px;
     }
 
-    .form-group {
+    .loginform {
         display: flex;
         flex-direction: column;
         text-align: center;
     }
 
-    .form-group label {
+    .loginform label {
         margin-bottom: 10px;
         margin-top: 10px;
         color: white;
     }
 
-    .form-group input {
-        width: 500px;
+    .loginform input {
+        width: 50%;
         margin: auto;
         text-align: center;
     }
 
-    .form-group input[type=submit]{
-        width: 100px;
-        align-items: center;
-        margin: 0 auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .form-group input#create_button{
-        width: 150px;
-        align-items: center;
-        margin: 0 auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .form-group input#edit_button{
-        width: 150px;
-        align-items: center;
-        margin: 0 auto;
+    .loginform button {
+        width: 30%;
+        text-align: center;
+        margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
-
-    .form-group span {
+    .loginform span {
         color: white;
     }
 
-    .form-group span a {
+    .loginform span a {
         color: white;
-    }
-
-    select#playeramount{
-      width: 50px;
-      margin: 0 auto;
     }
 
     .login h3 {
@@ -490,11 +455,6 @@ h2 span {
         height: 500px;
     }
 
-    .teams img{
-        display: block;
-        margin: 0 auto; 
-    }
-
     .teams h3, .teams h4 {
         text-align: center;
         color: black;
@@ -507,21 +467,13 @@ h2 span {
         padding: 0;
     }
 
-    .teams a {
-       display: flex;
-       flex-direction: column;
+    .teams li {
+        list-style: none;
         text-align: center;
         margin: 0;
-        padding: 5px;
+        padding: 0;
     }
 
-    .teams p{
-        text-align: center;
-    }
-
-    .team-form h3{
-        text-align: center;
-    }
     .team-form form{
         display: flex;
         flex-direction: column;
@@ -637,11 +589,6 @@ h2 span {
     .poules ul {
         margin-bottom: 10px;
     }
-
-
-     /* ==========================================================================
-   Team
-   ========================================================================== */
 
 
 /* ==========================================================================

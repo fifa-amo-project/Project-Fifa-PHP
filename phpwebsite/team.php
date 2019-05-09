@@ -12,6 +12,10 @@ $team = $prepare->fetch(PDO::FETCH_ASSOC);
 $teamname = htmlentities($team['teamname']);
 $p_amount = htmlentities($team['players']);
 
+if(!isset($_SESSION['id'])){
+    header('Location: redirect.php');
+    exit;
+}
 ?>
 <main>
     <div class="container">
