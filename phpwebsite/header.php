@@ -45,7 +45,7 @@ poule pagina
 -->
 
 <header>
-    <?php var_dump($_SESSION);?>
+
     <div class="container">
         <div class="header">
             <div class="title">
@@ -55,6 +55,7 @@ poule pagina
             <nav>
                 <a href="spelers.php">Spelers</a>
                 <a href="teams.php">Teams</a>
+                <a href="poules.php">Wedstrijden</a>
             </nav>
             <?php
             if(isset($_SESSION['id'])){

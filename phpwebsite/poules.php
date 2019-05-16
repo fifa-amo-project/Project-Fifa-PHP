@@ -5,11 +5,22 @@
  * Date: 16-4-2019
  * Time: 10:17
  */
-require 'config.php';
 require 'header.php';
+$sql = "SELECT * FROM teams"; //gewoon een opslag van een string die je later gaat gebruiken
+$query = $db->query($sql); //verzoek naar de database, voer sql van hierboven uit
+$teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles binnenhalen
+if(!isset($_SESSION['id'])){
+    header('Location: redirect.php');
+    exit;
+}
+
+if(!isset($_SESSION['is_Admin'])){
+    header('Location: redirect_auth.php');
+    exit;
+}
 ?>
 
-<main>
+<main><!--
     <div class="container">
         <div class="poules">
             <h3>Dit zijn de Poules:</h3>
@@ -27,12 +38,23 @@ require 'header.php';
 
                     <button type="submit">Poule Toevoegen</button>
 
+                    -->
 
-                </form> <!-- end of form action -->
 
-            </div><!-- end of team-form -->
-        </div><!-- end of teams -->
-    </div><!-- end of container -->
+    <div class="competition">
+        <div class="container">
+            <h4>Maak een wedstrijdschema:</h4>
+
+            <form action="fifaController.php" method="post">
+                <input type='hidden' name='type' value='create-competition'>
+                <label for="wedstrijdschema"><b>Maak een Wedstrijdschema</b></label>
+
+                <button type="submit">Wedstrijdschema Maken</button>
+            </form>
+        </div>
+    </div>
+
+
 </main>
 
 

@@ -51,7 +51,7 @@ if($_POST['type'] == 'delete'){
 
 if($_POST['type'] == 'edit'){
     $id = $_GET['id'];
-    
+
     $sql = "UPDATE teams SET
     teamname = :teamname,
     players  = :players 
@@ -66,3 +66,48 @@ if($_POST['type'] == 'edit'){
     exit;
 
 }
+
+if ($_POST['type'] == 'create-competition') {
+
+
+
+    $sqldelete = "DELETE FROM matches";
+    $querydel = $db->query($sqldelete); //verzoek naar de database, voer sql van hierboven uit
+    
+
+
+    $sql = "SELECT * FROM teams";
+    $query = $db->query($sql); //verzoek naar de database, voer sql van hierboven uit
+    $teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles binnenhalen
+
+    $teamsArray = array();
+
+    foreach ($teams as $team) {
+        array_push($teamsArray, $team['teamname']);
+    }
+
+    $arrLength = count($teamsArray);
+
+
+            for ( $i = 0; $i < $arrLength; $i++)
+            {
+                for ($x = 0; $x < count($teamsArray); $x++ )
+                {
+                    if($teamsArray[0] !== $teamsArray[$x])
+                    {
+                        $matchsql = "INSERT INTO matches ( team1, team2 )
+                        values (:team1 , :team2)";
+                        $prepare = $db->prepare($matchsql);
+                        $prepare->execute([
+                            
+                            ':team1' => $teamsArray[0],
+                            ':team2' => $teamsArray[$x]
+                        ]);
+                    }
+                }
+                array_shift($teamsArray);
+            }
+    //exit;
+    header("Location: matches.php");
+}
+
