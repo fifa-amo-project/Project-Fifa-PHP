@@ -51,7 +51,7 @@ if($_POST['type'] == 'delete'){
 
 if($_POST['type'] == 'edit'){
     $id = $_GET['id'];
-
+    
     $sql = "UPDATE teams SET
     teamname = :teamname,
     players  = :players 

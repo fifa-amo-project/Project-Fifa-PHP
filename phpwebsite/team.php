@@ -23,25 +23,26 @@ if(!isset($_SESSION['id'])){
             <h3>Dit is  <?php echo $teamname  ?></h3>
             <p>Aantal spelers: <?php echo $p_amount  ?></p>
                 <img src="https://via.placeholder.com/300x200" alt="">
-            <form action='fifacontroller.php?id=<?=$id?>' method="post">
+            <form action='fifaController.php?id=<?=$id?>' method="post">
                     <?php
                     
                     if(isset($_SESSION['is_Admin'])){
                         echo "
                         <div class='form-group'>
-                        <input type='hidden' name='type' value='delete'>
+                            <input type='hidden' name='type' value='delete'>
                             <input type='submit' value='delete'>
                         </div>
-
-                        <div class='form-group'>
-                        <input type='hidden' name='type' value='edit'>
-                            <a href='edit.php?id=$id'>team aanpassen</a>
-                        </div>
-                    
                     ";
                     }
                     ?>
             </form>
+                <?php
+                    if(isset($_SESSION['is_Admin'])){
+                        echo "
+                            <a href='edit.php?id=$id'>team aanpassen</a>
+                        ";
+                    }
+                ?>  
         </div> 
     </div>
 </main>
