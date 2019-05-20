@@ -22,6 +22,7 @@ $teams = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //alles
         <div class="teams">
             <h3>Dit zijn de Teams:</h3>
              <?php
+             
             foreach ($teams as $team){
                 $teamname = htmlentities($team['teamname']);
                 $id = htmlentities($team['id']);
