@@ -64,9 +64,26 @@ if(!isset($_SESSION['is_Admin'])){
                         if($teamsArray[0] !== $teamsArray[$x])
                         {
                             echo "<div class='game'>";
-                            echo "<p> {$teamsArray[0]}</p>";
+                            /*echo "<p> {$teamsArray[0]}</p>";
                             echo "<h3> VS </h3>";
-                            echo "<p> {$teamsArray[$x]}</p>";
+                            echo "<p> {$teamsArray[$x]}</p>";*/
+                            echo "<form action='fifaController.php' method='post'>
+                                  
+                                  <input type='hidden' name='type' value='create-score'>
+                                  
+                                  <input type='hidden' name='{$teamsArray[0]}-score' value='{$teamsArray[0]}-score'>
+                                  <p> {$teamsArray[0]}</p>
+                                  <input type='text' placeholder='score {$teamsArray[0]}' name='result_team1' id='result_team1' >
+                                  
+                                  <h3> VS </h3>
+                                  
+                                  <input type='hidden' name='{$teamsArray[$x]}-score' value='{$teamsArray[$x]}-score'>
+                                   <p> {$teamsArray[$x]}</p>
+                                  <input type='text' placeholder='score {$teamsArray[$x]}' name='result_team2' id='result_team2' >
+                                 
+                                  <input type='submit' id='create_score_button' value='submit scores'> 
+                                  
+                                  </form>";
                             echo "</div>";
                         }
                     }

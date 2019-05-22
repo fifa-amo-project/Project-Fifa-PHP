@@ -18,7 +18,7 @@ require 'config.php';
 if ($_POST['type'] == 'create') {
     $teamname = $_POST['teamname'];
     $created_by = $_SESSION['id'];
-    $players= $_POST['p-amount'];
+    $players = $_POST['p-amount'];
 
     $sql = "INSERT INTO teams (teamname, players, created_by ) 
 values (:teamname,:players , :created_by)";
@@ -73,7 +73,10 @@ if ($_POST['type'] == 'create-competition') {
 
     $sqldelete = "DELETE FROM matches";
     $querydel = $db->query($sqldelete); //verzoek naar de database, voer sql van hierboven uit
-    
+    $preparedel = $db->prepare($sqldelete);
+    $preparedel->execute([
+        ':id' => $team
+    ]);
 
 
     $sql = "SELECT * FROM teams";
@@ -95,11 +98,11 @@ if ($_POST['type'] == 'create-competition') {
                 {
                     if($teamsArray[0] !== $teamsArray[$x])
                     {
-                        $matchsql = "INSERT INTO matches ( team1, team2 )
-                        values (:team1 , :team2)";
+                        $matchsql = "INSERT INTO matches (id, team1, team2 )
+                        values (:id,:team1 , :team2)";
                         $prepare = $db->prepare($matchsql);
                         $prepare->execute([
-                            
+                            ':id' => $id,
                             ':team1' => $teamsArray[0],
                             ':team2' => $teamsArray[$x]
                         ]);
@@ -111,3 +114,56 @@ if ($_POST['type'] == 'create-competition') {
     header("Location: matches.php");
 }
 
+
+if ($_POST['type'] == 'create-player') {
+    $playername = $_POST['playername'];
+    $created_by = $_SESSION['id'];
+    $playerteam = $_POST['playerteam'];
+    /*$p-teamname = $_POST['p-teamname'];*/
+
+    $sql = "INSERT INTO players (id, playername, playerteam, created_by ) 
+values (:id, :playername, :playerteam, :created_by)";
+
+    $prepare = $db->prepare($sql); //protect against sql injection
+    $prepare->execute([
+        ':id' => $id,
+        ':playername' => $playername,
+        ':created_by' => $created_by,
+        ':playerteam' => $playerteam
+
+    ]);
+    header('Location: index.php');
+    exit;
+}
+
+
+if($_POST['type'] == 'delete-player'){
+    $id = $_GET['id'];
+    $sql = "DELETE FROM players WHERE id = :id";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':id' => $id
+    ]);
+
+    $msg = 'Player deleted';
+    header( "Location: index.php?msg=$msg");
+    exit;
+}
+
+if($_POST['type'] == 'create-score'){
+
+    $result_team1 = $_POST['result_team1'];
+    $result_team2 = $_POST['result_team2'];
+
+    $sql = "INSERT INTO matches (result_team1, result_team2) 
+values (:result_team1,:result_team2)";
+
+    $prepare = $db->prepare($sql); //protect against sql injection
+    $prepare->execute([
+
+        ':result_team1' => $result_team1,
+        ':result_team2' => $result_team2,
+
+    ]);
+    exit;
+}

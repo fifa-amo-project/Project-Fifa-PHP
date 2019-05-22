@@ -121,8 +121,8 @@ main {
     background-size: auto;
     height: auto;
     min-height: 100%;
-    padding-top: 100px;
-    padding-bottom: 600px;
+    padding-top: 50px;
+    padding-bottom: 200px;
 }
 .redirect{
     height: 500px;
@@ -272,7 +272,22 @@ h2 span {
     font-weight: bold;
     text-shadow: -1.2px 0 black, 0 1.2px black, 1.2px 0 black, 0 -1.2px black;
 }
+/* ==========================================================================
+    .info
+    ========================================================================= */
 
+    .info {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .info h3, .info p {
+        color: white;
+    }
+
+    .info h3 {
+        text-transform: uppercase;
+    }
 
 /* ==========================================================================
     Players and Teams
@@ -479,6 +494,10 @@ h2 span {
         margin-bottom: 10px;
     }
 
+    .spelers select#playeramount {
+        width: 100px;
+    }
+
    /* ==========================================================================
    Teams
    ========================================================================== */
@@ -638,10 +657,68 @@ h2 span {
         margin-bottom: 10px;
     }
 
+    .competition {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .competition .container form{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .competition button {
+        width: 30%;
+        text-align: center;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .competition h4 {
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    .game {
+        padding: 20px;
+    }
+
+    .games {
+         padding-bottom: 150px;
+     }
+
+    .games input {
+        width: 30%;
+    }
+
+    .game input {
+        margin: 0 auto;
+
+    }
+
+    .game {
+        border-color: white;
+        border-style: solid;
+        margin: 20px;
+    }
+
+
+
 
      /* ==========================================================================
    Team
    ========================================================================== */
+
+.players-in-team {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+
+
 
 
 /* ==========================================================================
