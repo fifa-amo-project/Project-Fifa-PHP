@@ -50,14 +50,12 @@ if($_POST['type'] == 'delete'){
 
 
 if($_POST['type'] == 'edit'){
-
     $id = $_GET['id'];
 
     $sql = "UPDATE teams SET
     teamname = :teamname,
     players  = :players 
     WHERE id = :id";
-
     $prepare = $db->prepare($sql);
     $prepare->execute([
         ':id' => $id,
@@ -173,23 +171,3 @@ if($_POST['type'] == 'create-score'){
     header( "Location: matches.php");
     exit;
 }
-
-
-
-/* $id = $_GET['id'];
-
-$sql = "UPDATE teams SET
-    teamname = :teamname,
-    players  = :players
-    WHERE id = :id";
-
-$prepare = $db->prepare($sql);
-$prepare->execute([
-    ':id' => $id,
-    ':teamname' => $_POST['teamname'],
-    ':players' => $_POST['p-amount']
-]);
-header("Location: team.php?id=$id");
-exit;
-
-*/

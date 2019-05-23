@@ -4,7 +4,7 @@ require 'header.php';
 ?>
 <main>
     <div class="container">
-        <div class="redirect">
+        <div class="redirsect">
             <p>
              Je moet eerst registreren of inloggen voordat je iets kan aanmaken.
             
