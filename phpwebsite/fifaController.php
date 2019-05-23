@@ -23,14 +23,20 @@ if ($_POST['type'] == 'create') {
     $sql = "INSERT INTO teams (teamname, players, created_by ) 
 values (:teamname,:players , :created_by)";
 
+    function clean($teamname) {
+        $teamname = str_replace(' ', '-', $teamname); // Replaces all spaces with hyphens.
+
+        return preg_replace('/[^A-Za-z0-9\-]/', '', $teamname); // Removes special chars.
+    }
+
     $prepare = $db->prepare($sql); //protect against sql injection
     $prepare->execute([
-        ':teamname' => $teamname,
+        ':teamname' => clean($teamname),
         ':players' => $players,
         ':created_by' => $created_by
         
     ]);
-    header('Location: index.php');
+    header('Location: teams.php');
     exit;
 }
 
@@ -44,7 +50,7 @@ if($_POST['type'] == 'delete'){
     ]);
 
     $msg = 'Team deleted';
-    header( "Location: index.php?msg=$msg");
+    header( "Location: teams.php?msg=$msg");
     exit;
 }
 
@@ -73,10 +79,7 @@ if ($_POST['type'] == 'create-competition') {
 
     $sqldelete = "DELETE FROM matches";
     $querydel = $db->query($sqldelete); //verzoek naar de database, voer sql van hierboven uit
-    $preparedel = $db->prepare($sqldelete);
-    $preparedel->execute([
-        ':id' => $team
-    ]);
+
 
 
     $sql = "SELECT * FROM teams";
@@ -98,11 +101,10 @@ if ($_POST['type'] == 'create-competition') {
                 {
                     if($teamsArray[0] !== $teamsArray[$x])
                     {
-                        $matchsql = "INSERT INTO matches (id, team1, team2 )
-                        values (:id,:team1 , :team2)";
+                        $matchsql = "INSERT INTO matches (team1, team2 )
+                        values (:team1 , :team2)";
                         $prepare = $db->prepare($matchsql);
                         $prepare->execute([
-                            ':id' => $id,
                             ':team1' => $teamsArray[0],
                             ':team2' => $teamsArray[$x]
                         ]);
@@ -124,6 +126,12 @@ if ($_POST['type'] == 'create-player') {
     $sql = "INSERT INTO players (id, playername, playerteam, created_by ) 
 values (:id, :playername, :playerteam, :created_by)";
 
+    function clean($playername) {
+        $playername = str_replace(' ', '-', $playername); // Replaces all spaces with hyphens.
+
+        return preg_replace('/[^A-Za-z0-9\-]/', '', $playername); // Removes special chars.
+    }
+
     $prepare = $db->prepare($sql); //protect against sql injection
     $prepare->execute([
         ':id' => $id,
@@ -132,7 +140,7 @@ values (:id, :playername, :playerteam, :created_by)";
         ':playerteam' => $playerteam
 
     ]);
-    header('Location: index.php');
+    header('Location: spelers.php');
     exit;
 }
 
