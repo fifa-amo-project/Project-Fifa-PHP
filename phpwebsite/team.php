@@ -39,45 +39,43 @@ $players = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //all
                     ?></p>
                 <p>Spelers in dit team:</p>
                 <ul>
-                    <?php
-
-
-
-                         foreach ($players as $player) {
-
-                             $playername = htmlentities($player['playername']);
-
-                             echo " <li class='players-in-team'> {$player['playername']}</li> ";
-                         }
-                    ?>
 
                     <form action='fifaController.php' method="post">
                         <?php
 
                         if(isset($_SESSION['is_Admin'])){
-                            echo "
-                        <div class='form-group'>
-                            <input type='hidden' name='type' value='delete-player'>
-                            <input type='submit' value='delete'>
-                        </div>
-                    ";
+                            
+
+                         foreach ($players as $player) {
+
+                            $playername = htmlentities($player['playername']);
+
+                            echo " 
+                                <div class='form-group'>
+                                <input type='hidden' name='type' value='delete-player'>
+                                <li class='players-in-team'> {$player['playername']}</li>
+                                <input type='submit' value='delete'>
+                            </div> ";
+                         }                    
                         }
                         ?>
+                    </form>
                 </ul>
                 <img src="https://via.placeholder.com/300x200" alt="">
                 <form action='fifaController.php?id=<?=$id?>' method="post">
                     <?php
 
-                    if(isset($_SESSION['is_Admin'])){
-                        echo "
-                        <div class='form-group'>
-                            <input type='hidden' name='type' value='delete'>
-                            <input type='submit' value='delete'>
-                        </div>
-                    ";
-                    }
-                    ?>
+                        if(isset($_SESSION['is_Admin'])){
+                            echo "
+                            <div class='form-group'>
+                                <input type='hidden' name='type' value='delete'>
+                                <input type='submit' value='delete'>
+                            </div>";
+                        }
+                        ?>
                 </form>
+                    
+                
                 <?php
                 if(isset($_SESSION['is_Admin'])){
                     echo "
