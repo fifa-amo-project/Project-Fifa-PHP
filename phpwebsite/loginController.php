@@ -78,7 +78,11 @@ if ($_POST['type'] === 'register') {
         } else {
             echo "email doesn't exist yet";
         }
-
+        if (empty($_POST["email"])) {
+            $emailErr = "Email is required";
+        } else {
+            $email = test_input($_POST["email"]);
+        }
 
     }
     /*  if (isset($_POST['submit'])) {

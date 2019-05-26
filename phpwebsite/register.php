@@ -21,7 +21,7 @@ require 'header.php';
                 <input type="hidden" name="type" value="register">
                     <div class="form-group">
                          <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Email Adres" name="email" required>
+                        <input type="email" placeholder="Email Adres" name="email" required>
                     </div>
                    
                     <div class="form-group">

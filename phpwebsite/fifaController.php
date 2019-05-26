@@ -135,7 +135,7 @@ values (:id, :playername, :playerteam, :created_by)";
     $prepare = $db->prepare($sql); //protect against sql injection
     $prepare->execute([
         ':id' => $id,
-        ':playername' => $playername,
+        ':playername' => clean($playername),
         ':created_by' => $created_by,
         ':playerteam' => $playerteam
 
