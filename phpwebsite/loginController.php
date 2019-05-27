@@ -26,7 +26,7 @@ if ( $_POST['type'] === 'login' ) {
 
   if($user === false){
 
-
+      die(' Gebruikersnaam óf Wachtwoord verkeerd ingevoerd.');
 
   } else{
 
