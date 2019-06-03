@@ -135,7 +135,7 @@ values (:id, :playername, :playerteam, :created_by)";
     $prepare = $db->prepare($sql); //protect against sql injection
     $prepare->execute([
         ':id' => $id,
-        ':playername' => clean($playername),
+        ':playername' => $playername,
         ':created_by' => $created_by,
         ':playerteam' => $playerteam
 
@@ -164,10 +164,30 @@ if($_POST['type'] == 'create-score'){
     //var_dump($_POST); die;
     $id = $_GET['id'];
 
+    $score1 = $_POST['result_team1'];
+    $score2 = $_POST['result_team2'];
+    $teamone = $_POST['team1'];
+    $teamtwo = $_POST['team2'];
+
     $sql = "UPDATE matches SET
     result_team1 = :result_team1,
     result_team2  = :result_team2 
     WHERE id = :id";
+
+    $pointsteamone = "SELECT * FROM teams WHERE teamname = :id";
+    $preparet1 = $db->prepare($pointsteamone);
+    $preparet1->execute([
+        ':id' => $teamone
+    ]);
+    $matchteam1 = $preparet1->fetch(PDO::FETCH_ASSOC);
+
+    $pointsteamtwo = "SELECT * FROM teams WHERE teamname = :id";
+    $preparet2 = $db->prepare($pointsteamtwo);
+    $preparet2->execute([
+        ':id' => $teamtwo
+    ]);
+    $matchteam2 = $preparet2->fetch(PDO::FETCH_ASSOC);
+
 
     $prepare = $db->prepare($sql); //protect against sql injection
     $prepare->execute([
@@ -176,6 +196,29 @@ if($_POST['type'] == 'create-score'){
         ':result_team2' => $_POST['result_team2'],
 
     ]);
+    
+    if($score1 > $score2){
+        $score = 3 + $matchteam1['points'];
+
+        $pointsql = "UPDATE teams SET points = :points WHERE teamname = :teamname";
+        $prepare = $db->prepare($pointsql);
+        $prepare->execute([
+            ':points' => $score,
+            ':teamname' => trim($teamone)
+        ]);
+
+    }else if ($score2 > $score1){
+        $score = 3 + $matchteam2['points'];
+
+        $pointsql = "UPDATE teams SET points = :points WHERE teamname = :teamname";
+        $prepare = $db->prepare($pointsql);
+        $prepare->execute([
+            ':points' => $score,
+            ':teamname' => trim($teamtwo)
+        ]);
+    }
+
+
     header( "Location: matches.php");
     exit;
 }
