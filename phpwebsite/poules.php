@@ -50,7 +50,9 @@ if(!isset($_SESSION['is_Admin'])){
                 <label for="wedstrijdschema"><b>Maak een Wedstrijdschema</b></label>
 
                 <button type="submit">Wedstrijdschema Maken</button>
+                <a href="matches.php">kijk of er al wedstrijden beschikbaar zijn.</a>
             </form>
+            
         </div>
     </div>
 
