@@ -80,7 +80,8 @@ if ($_POST['type'] == 'create-competition') {
     $sqldelete = "DELETE FROM matches";
     $querydel = $db->query($sqldelete); //verzoek naar de database, voer sql van hierboven uit
 
-
+    $sqlclearpoints = "UPDATE teams SET points = null";
+    $clearquery = $db->query($sqlclearpoints);
 
     $sql = "SELECT * FROM teams";
     $query = $db->query($sql); //verzoek naar de database, voer sql van hierboven uit
