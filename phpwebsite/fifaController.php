@@ -207,7 +207,25 @@ if($_POST['type'] == 'create-score'){
             ':teamname' => trim($teamone)
         ]);
 
-    }else if ($score2 > $score1){
+    }else if($score1 == $score2){
+        $score1 = 1 + $matchteam1['points'];
+        $score2 = 1 + $matchteam2['points'];
+
+        $sql = "UPDATE teams SET points =:points  WHERE teamname =:teamname";
+        $prepare = $db->prepare($sql);
+        $prepare->execute([
+            ':points' => $score1,
+            ':teamname' => trim($teamone)
+        ]);
+
+        $sql = "UPDATE teams SET points =:points WHERE teamname =:teamname";
+        $prepare = $db->prepare($sql);
+        $prepare->execute([
+            ':points' => $score2,
+            ':teamname' => $teamtwo
+        ]);
+    }
+    else if ($score2 > $score1){
         $score = 3 + $matchteam2['points'];
 
         $pointsql = "UPDATE teams SET points = :points WHERE teamname = :teamname";
