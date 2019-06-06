@@ -38,13 +38,13 @@ if(!isset($_SESSION['is_Admin'])){
     			<th>PS</th>
     			<th>TEAM</th>
     			<th>PT</th>
-    		</tr><br>";
+    		</tr>";
     	}
     	echo "<tr>
     		<td>$i</td>
     		<td>{$position['teamname']}</td>
     		<td>{$position['points']}</td>
-    		</tr><br>";
+    		</tr>";
 
     		$i++;
 

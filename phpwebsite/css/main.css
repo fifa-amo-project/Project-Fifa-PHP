@@ -164,7 +164,7 @@ h2 span {
     font-family: 'Keep Calm Med';
 }
 
-p, span, h2, h3, h4, h5, a {
+p, span, h2, h3, h4, h5, a, td {
     font-family: 'Keep Calm Med';
 }
 
@@ -722,6 +722,36 @@ h2 span {
    Standen
    ========================================================================== */
 
+.standen table{
+   border-collapse: collapse;
+   width: 50%;
+   text-align: center;
+   margin: 0 auto;
+}
+
+.standen h3{
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+
+.standen td, .standen th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.standen tr{
+    background-color: #fff;
+}
+
+.standen tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.standen tr:hover {
+    background-color: #ddd;
+}
 
 
 
