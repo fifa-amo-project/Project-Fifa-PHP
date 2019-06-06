@@ -25,9 +25,9 @@ if ( $_POST['type'] === 'login' ) {
 
 
   if($user === false){
-
-      die(' Gebruikersnaam óf Wachtwoord verkeerd ingevoerd.');
-
+    header("refresh:; url=http://localhost/Project-Fifa-PHP/phpwebsite/login.php");
+      die(' Gebruikersnaam óf Wachtwoord verkeerd ingevoerd. U word na 5 seconden teruggestuurd');
+        
   } else{
 
     $validPassword = password_verify($passwordAttempt, $user['password']);
@@ -43,7 +43,8 @@ if ( $_POST['type'] === 'login' ) {
 
     } else{
 
-      die(' gebruikersnaam en wachtwoord komen niet overeen!');
+        header("refresh:; url=http://localhost/Project-Fifa-PHP/phpwebsite/login.php");
+        die(' Gebruikersnaam óf Wachtwoord verkeerd ingevoerd. U word na 5 seconden teruggestuurd');
     }
   }
 }
@@ -129,6 +130,8 @@ if ($_POST['type'] === 'register') {
             foreach ($errors as $error) {
                 echo $error . "\n";
             }
+            header("refresh:5; url=http://localhost/Project-Fifa-PHP/phpwebsite/register.php");
+            
             die();
         } else {
             header('location: login.php');
