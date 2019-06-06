@@ -56,6 +56,7 @@ poule pagina
                 <a href="spelers.php">Spelers</a>
                 <a href="teams.php">Teams</a>
                 <a href="poules.php">Wedstrijden</a>
+                <a href="position.php">Standen</a>
             </nav>
             <?php
             if(isset($_SESSION['id'])){
