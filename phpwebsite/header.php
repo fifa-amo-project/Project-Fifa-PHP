@@ -57,6 +57,7 @@ poule pagina
                 <a href="teams.php">Teams</a>
                 <a href="poules.php">Wedstrijden</a>
                 <a href="position.php">Standen</a>
+                <a href="media/Fifa.exe" download> Download de gok app!</a>
             </nav>
             <?php
             if(isset($_SESSION['id'])){
