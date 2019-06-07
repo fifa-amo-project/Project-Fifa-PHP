@@ -11,10 +11,7 @@ if(!isset($_SESSION['id'])){
     exit;
 }
 
-if(!isset($_SESSION['is_Admin'])){
-    header('Location: redirect_auth.php');
-    exit;
-}
+
 
 ?>
 
