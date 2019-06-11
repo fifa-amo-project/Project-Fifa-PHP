@@ -124,8 +124,8 @@ if ($_POST['type'] == 'create-player') {
     $playerteam = $_POST['playerteam'];
     /*$p-teamname = $_POST['p-teamname'];*/
 
-    $sql = "INSERT INTO players (id, playername, playerteam, created_by ) 
-values (:id, :playername, :playerteam, :created_by)";
+    $sql = "INSERT INTO players ( playername, playerteam, created_by ) 
+values ( :playername, :playerteam, :created_by)";
 
     function clean($playername) {
         $playername = str_replace(' ', '-', $playername); // Replaces all spaces with hyphens.
@@ -135,7 +135,7 @@ values (:id, :playername, :playerteam, :created_by)";
 
     $prepare = $db->prepare($sql); //protect against sql injection
     $prepare->execute([
-        ':id' => $id,
+        
         ':playername' => $playername,
         ':created_by' => $created_by,
         ':playerteam' => $playerteam
@@ -146,18 +146,7 @@ values (:id, :playername, :playerteam, :created_by)";
 }
 
 
-if($_POST['type'] == 'delete-player'){
-    $id = $_GET['id'];
-    $sql = "DELETE FROM players WHERE id = :id";
-    $prepare = $db->prepare($sql);
-    $prepare->execute([
-        ':id' => $id
-    ]);
 
-    $msg = 'Player deleted';
-    header( "Location: index.php?msg=$msg");
-    exit;
-}
 
 if($_POST['type'] == 'create-score'){
 

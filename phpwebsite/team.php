@@ -43,22 +43,22 @@ $players = $query->fetchAll(PDO::FETCH_ASSOC); //multie demensionale array //all
                     <form action='fifaController.php' method="post">
                         <?php
 
-                         if(isset($_SESSION['is_Admin'])){
+                        if(isset($_SESSION['is_Admin'])){
                             
 
                          foreach ($players as $player) {
 
                             $playername = htmlentities($player['playername']);
 
-                            echo "
-                                <div class='form-group'>
-                                <input type='hidden' name='type' value='delete-player'>
+                            echo " 
+                            <div class='form-group'>
+                                
                                 <li class='players-in-team'> {$player['playername']}</li>
                                 
                             </div> ";
-                         }
+                         }                    
                         }
-                       ?>
+                        ?>
                     </form>
                 </ul>
                 <img src="https://via.placeholder.com/300x200" alt="">

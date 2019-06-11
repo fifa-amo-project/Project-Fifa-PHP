@@ -25,9 +25,10 @@ if ( $_POST['type'] === 'login' ) {
 
 
   if($user === false){
-    header("refresh:; url=http://localhost/Project-Fifa-PHP/phpwebsite/login.php");
-      die(' Gebruikersnaam óf Wachtwoord verkeerd ingevoerd. U word na 5 seconden teruggestuurd');
-        
+
+    header("refresh:5; url=https://jaibreyonlourens.nl/Project-Fifa-PHP/login.php");
+    die(' Gebruikersnaam óf Wachtwoord verkeerd ingevoerd. U word na 5 seconden teruggestuurd');
+
   } else{
 
     $validPassword = password_verify($passwordAttempt, $user['password']);
@@ -43,7 +44,7 @@ if ( $_POST['type'] === 'login' ) {
 
     } else{
 
-        header("refresh:; url=http://localhost/Project-Fifa-PHP/phpwebsite/login.php");
+        header("refresh:5; url=https://jaibreyonlourens.nl/Project-Fifa-PHP/login.php");
         die(' Gebruikersnaam óf Wachtwoord verkeerd ingevoerd. U word na 5 seconden teruggestuurd');
     }
   }
@@ -75,12 +76,12 @@ if ($_POST['type'] === 'register') {
         }
 
         if ($stmt->rowCount() > 0) {
-            echo "Email exists already";
+            echo "Uw email bestaat al";
         } else {
-            echo "email doesn't exist yet";
+            echo "Uw email bestaat nog niet";
         }
         if (empty($_POST["email"])) {
-            $emailErr = "Email is required";
+            $emailErr = "Email is vereist";
         } else {
             $email = test_input($_POST["email"]);
         }
@@ -114,24 +115,24 @@ if ($_POST['type'] === 'register') {
       } else if ($_POST['password'] == $_POST['passwordConfirm']) {
           $errors = array(); */
         if (strlen($password) < 7 || strlen($password) > 16) {
-            $errors[] = "Password should be min 7 characters and max 16 characters";
+            $errors[] = "Het wachtwoord moet ten minste 7 karakters en maximaal 16 karakters U word na 5 seconden teruggestuurd.";
         }
         if (!preg_match("/\d/", $password)) {
-            $errors[] = "Password should contain at least one digit";
+            $errors[] = "Het wachtwoord moet ten minste 1 cijfer Bevatten U word na 5 seconden teruggestuurd.";
         }
         if (!preg_match("/[A-Z]/", $password)) {
-            $errors[] = "Password should contain at least one Capital Letter";
+            $errors[] = "Het wachtwoord moet een hoofdletter bevatten U word na 5 seconden teruggestuurd.";
         }
         if (!preg_match("/[a-z]/", $password)) {
-            $errors[] = "Password should contain at least one small Letter";
+            $errors[] = "Het wachtwoord moet tenminste 1 kleine letter bevatten U word na 5 seconden teruggestuurd.";
         }
 
         if ($errors) {
             foreach ($errors as $error) {
                 echo $error . "\n";
             }
-            header("refresh:5; url=http://localhost/Project-Fifa-PHP/phpwebsite/register.php");
-            
+            header("refresh:5; url=https://jaibreyonlourens.nl/Project-Fifa-PHP/register.php");
+    
             die();
         } else {
             header('location: login.php');

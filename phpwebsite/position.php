@@ -12,7 +12,6 @@ if(!isset($_SESSION['id'])){
 }
 
 
-
 ?>
 
 <main>
@@ -35,13 +34,13 @@ if(!isset($_SESSION['id'])){
     			<th>PS</th>
     			<th>TEAM</th>
     			<th>PT</th>
-    		</tr>";
+    		</tr><br>";
     	}
     	echo "<tr>
     		<td>$i</td>
     		<td>{$position['teamname']}</td>
     		<td>{$position['points']}</td>
-    		</tr>";
+    		</tr><br>";
 
     		$i++;
 
